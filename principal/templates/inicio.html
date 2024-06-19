@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Online - Reserve já!</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <!-- Style -->
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="col-lg-8 mx-auto p-3 py-md-5">
+      <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+        <a
+          href="/"
+          class="d-flex align-items-center text-dark text-decoration-none"
+        >
+          <span class="fs-4">Pet online</span>
+        </a>
+        <br />
+        <a class="btn btn-primary" href="{% url 'contato' %}">Fale Conosco</a>
+      </header>
+
+      <main>
+        {% block principal %}
+        <h1>Reserve já o banho do seu Pet</h1>
+        <br />
+        <a href="{% url 'reserva:criar_reserva' %}" class="btn btn-primary"
+          >Fazer Reserva</a
+        >
+        {% endblock %}
+      </main>
+
+      <footer class="pt-5 my-5 text-muted border-top">
+        Cãobeleireiro e Gatomoda Pet Shop
+      </footer>
+    </div>
+
+    <script src="{% static 'js/bootstrap.bundle.min.ja' %}"></script>
+  </body>
+</html>
